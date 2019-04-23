@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import PageLayout from "./Shared/Layout/PageLayout";
-import helpers from "./Shared/helpers";
-import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
+import PageLayout from "../../Shared/Layout/PageLayout";
+import helpers from "../../Shared/helpers";
+import StoreViewPartImage from "../../Scenes/StoreView/StoreViewPartImage";
 import Select from "react-select";
 import {
     MDBCol,

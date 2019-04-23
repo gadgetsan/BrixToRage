@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import PageLayout from "./Shared/Layout/PageLayout";
-import StoreLocViewRow from "./Scenes/StoreLocView/StoreLocViewRow";
-import StoreLocCreateModal from "./Scenes/StoreLocView/StoreLocCreateModal";
-import helpers from "./Shared/helpers";
-import Pagination from "./Shared/Pagination";
-import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
+import PageLayout from "../../Shared/Layout/PageLayout";
+import StoreLocViewRow from "../../Scenes/StoreLocView/StoreLocViewRow";
+import StoreLocCreateModal from "../../Scenes/StoreLocView/StoreLocCreateModal";
+import helpers from "../../Shared/helpers";
+import Pagination from "../../Shared/Pagination";
+import StoreViewPartImage from "../../Scenes/StoreView/StoreViewPartImage";
 import {
     MDBCol,
     MDBRow,

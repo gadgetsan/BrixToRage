@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import PageLayout from "./Shared/Layout/PageLayout";
-import PartListPartRow from "./Scenes/PartListView/PartListPartRow";
-import helpers from "./Shared/helpers";
-import Pagination from "./Shared/Pagination";
-import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
+import PageLayout from "../../Shared/Layout/PageLayout";
+import PartListPartRow from "../../Scenes/PartListView/PartListPartRow";
+import helpers from "../../Shared/helpers";
+import Pagination from "../../Shared/Pagination";
+import StoreViewPartImage from "../../Scenes/StoreView/StoreViewPartImage";
 import {
     MDBCol,
     MDBRow,

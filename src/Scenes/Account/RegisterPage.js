@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import helpers from "./Shared/helpers";
+import helpers from "../../Shared/helpers";
 import {
     MDBCol,
     MDBRow,
