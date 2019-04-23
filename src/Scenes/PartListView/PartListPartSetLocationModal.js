@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PageLayout from "/src/Shared/Layout/PageLayout";
-import helpers from "/src/Shared/helpers";
+import helpers from "./Shared/helpers";
 import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
 import Select from "react-select";
 import {

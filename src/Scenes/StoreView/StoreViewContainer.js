@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
-import helpers from "/src/Shared/helpers";
+import helpers from "./Shared/helpers";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCol, MDBRow } from "mdbreact";
 
 export default class StoreViewContainer extends Component {

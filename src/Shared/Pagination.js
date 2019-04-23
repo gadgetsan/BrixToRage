@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PageLayout from "/src/Shared/Layout/PageLayout";
 import PartListPartRow from "/src/Scenes/PartListView/PartListPartRow";
-import helpers from "/src/Shared/helpers";
+import helpers from "./Shared/helpers";
 import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
 import {
     MDBCol,

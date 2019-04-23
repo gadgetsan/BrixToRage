@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PageLayout from "/src/Shared/Layout/PageLayout";
-import helpers from "/src/Shared/helpers";
+import helpers from "./Shared/helpers";
 import PartListPartInfoModal from "/src/Scenes/PartListView/PartListPartInfoModal";
 import PartListModalColorInfo from "/src/Scenes/PartListView/PartListModalColorInfo";
 import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
