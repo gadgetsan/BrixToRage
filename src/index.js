@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, Link, Redirect } from "react-router-dom";
-import StoreLocViewPage from "/src/Scenes/StoreLocView/StoreLocViewPage";
-import SetsPage from "/src/Scenes/SetsView/SetsPage";
-import StatsPage from "/src/Scenes/Statistics/StatsPage";
-import PartListPage from "/src/Scenes/PartListView/PartListPage";
-import LoginPage from "/src/Scenes/Account/LoginPage";
-import RegisterPage from "/src/Scenes/Account/RegisterPage";
+import StoreLocViewPage from "./Scenes/StoreLocView/StoreLocViewPage";
+import SetsPage from "./Scenes/SetsView/SetsPage";
+import StatsPage from "./Scenes/Statistics/StatsPage";
+import PartListPage from "./Scenes/PartListView/PartListPage";
+import LoginPage from "./Scenes/Account/LoginPage";
+import RegisterPage from "./Scenes/Account/RegisterPage";
 import { PrivateRoute } from "./Shared/PrivateRoute";
 
 import "./styles.css";

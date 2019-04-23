@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PageLayout from "/src/Shared/Layout/PageLayout";
 import StoreLocViewRow from "/src/Scenes/StoreLocView/StoreLocViewRow";
 import StoreLocCreateModal from "/src/Scenes/StoreLocView/StoreLocCreateModal";
-import helpers from "/src/Shared/helpers";
+import helpers from "./Shared/helpers";
 import Pagination from "/src/Shared/Pagination";
 import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
 import {
