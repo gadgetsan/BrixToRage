@@ -1,0 +1,8 @@
+avoir un système de fetch d'API et d'update des valeurs au fur et à mesure (pour les parts)
+avoir une hierarchie de storage
+generation d'étiquettes automatiquement pour chaque emplacement de storage
+pouvoir générer une représentation visuelle de mon stockage
+
+autocomplete l'entrée d'emplacement
+pouvoir avoir une liste d'items sans emplacement pour un set
+avoir une image pour tout les pieces
