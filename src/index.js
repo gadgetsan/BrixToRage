@@ -16,10 +16,10 @@ function App() {
         <Router basename={process.env.PUBLIC_URL}>
             <>
                 <Route path="/" exact component={PartListPage} />
-                <Route path="/parts" exact component={PartListPage} />
-                <Route path="/sets" exact component={SetsPage} />
+                <PrivateRoute path="/parts" exact component={PartListPage} />
+                <PrivateRoute path="/sets" exact component={SetsPage} />
                 <PrivateRoute path="/stats" exact component={StatsPage} />
-                <Route path="/storage" exact component={StoreLocViewPage} />
+                <PrivateRoute path="/storage" exact component={StoreLocViewPage} />
                 <Route path="/login" exact component={LoginPage} />
                 <Route path="/register" exact component={RegisterPage} />
             </>
