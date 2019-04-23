@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StoreViewContainer from "/src/Scenes/StoreView/StoreViewContainer";
+import StoreViewContainer from "./Scenes/StoreView/StoreViewContainer";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCol, MDBRow } from "mdbreact";
 
 export default class StoreViewLocationCard extends Component {

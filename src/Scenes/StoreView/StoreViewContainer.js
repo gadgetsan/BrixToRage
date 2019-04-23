@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
+import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
 import helpers from "./Shared/helpers";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCol, MDBRow } from "mdbreact";
 

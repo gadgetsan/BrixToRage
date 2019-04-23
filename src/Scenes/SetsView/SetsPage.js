@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import PageLayout from "/src/Shared/Layout/PageLayout";
-import SetsImportModal from "/src/Scenes/SetsView/SetsImportModal";
+import PageLayout from "./Shared/Layout/PageLayout";
+import SetsImportModal from "./Scenes/SetsView/SetsImportModal";
 import helpers from "./Shared/helpers";
-import SetsSetRow from "/src/Scenes/SetsView/SetsSetRow";
+import SetsSetRow from "./Scenes/SetsView/SetsSetRow";
 import {
     MDBCol,
     MDBRow,

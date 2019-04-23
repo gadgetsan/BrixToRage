@@ -27,7 +27,7 @@ import {
     MDBTableHead,
     MDBTableBody
 } from "mdbreact";
-import CustomNavLink from "/src/Shared/CustomNavLink";
+import CustomNavLink from "./Shared/CustomNavLink";
 const CustomNavLinkWithRouter = withRouter(props => <CustomNavLink {...props} />);
 
 export default class PageLayout extends Component {

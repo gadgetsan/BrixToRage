@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import PageLayout from "/src/Shared/Layout/PageLayout";
+import PageLayout from "./Shared/Layout/PageLayout";
 import helpers from "./Shared/helpers";
-import PartListPartInfoModal from "/src/Scenes/PartListView/PartListPartInfoModal";
-import PartListModalColorInfo from "/src/Scenes/PartListView/PartListModalColorInfo";
-import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
+import PartListPartInfoModal from "./Scenes/PartListView/PartListPartInfoModal";
+import PartListModalColorInfo from "./Scenes/PartListView/PartListModalColorInfo";
+import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
 import {
     MDBCol,
     MDBRow,

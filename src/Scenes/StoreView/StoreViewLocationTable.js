@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PageLayout from "/src/Shared/Layout/PageLayout";
+import PageLayout from "./Shared/Layout/PageLayout";
 import { MDBCol, MDBRow, MDBCard, MDBCardHeader, MDBCardBody, MDBTable, MDBTableHead, MDBTableBody, MDBCardTitle, MDBIcon } from "mdbreact";
 
 export default class StoreViewLocationTable extends Component {

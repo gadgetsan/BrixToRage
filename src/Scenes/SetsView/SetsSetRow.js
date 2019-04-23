@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PageLayout from "./Shared/Layout/PageLayout";
-import SetsSetInfoModal from "/src/Scenes/SetsView/SetsSetInfoModal";
-import StoreViewPartImage from "/src/Scenes/StoreView/StoreViewPartImage";
+import SetsSetInfoModal from "./Scenes/SetsView/SetsSetInfoModal";
+import StoreViewPartImage from "./Scenes/StoreView/StoreViewPartImage";
 import {
     MDBCol,
     MDBRow,
