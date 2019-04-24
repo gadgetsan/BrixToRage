@@ -55,7 +55,7 @@ export default class StoreLocCreateModal extends Component {
 
     createLocation() {
         //console.log({ locationCode: this.state.LocationCode, locationName: this.state.LocationName });
-        helpers.postHelperNoAuth(
+        helpers.postHelper(
             "createLocation",
             { locationCode: this.state.LocationCode, locationName: this.state.LocationName, locationType: this.state.LocationType },
             () => {

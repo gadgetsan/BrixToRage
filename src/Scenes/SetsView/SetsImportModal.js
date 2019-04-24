@@ -51,7 +51,7 @@ export default class SetsImportModal extends Component {
 
     createLocation() {
         console.log({ SetCode: this.state.SetCode });
-        helpers.postHelperNoAuth("fetchSet", { SetCode: this.state.SetCode }, () => {
+        helpers.postHelper("fetchSet", { SetCode: this.state.SetCode }, () => {
             this.setState({
                 modal: false
             });
