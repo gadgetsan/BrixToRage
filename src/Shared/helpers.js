@@ -13,10 +13,10 @@ module.exports.fetchHelper = (location, callback) => {
     module.exports.fetchHelperWithData(location, {}, callback);
 };
 
-if (document.domain == "olz6839009.codesandbox.io") {
+if (document.domain == "pj2yjq46qx.codesandbox.io") {
     module.exports.apiURL = "https://2pl3rqowrj.sse.codesandbox.io";
 } else {
-    module.exports.apiURL = "https://idk-do.appspot.com/";
+    module.exports.apiURL = "https://idk-do.appspot.com";
 }
 
 module.exports.apiGet = (location, header, data, callback) => {
