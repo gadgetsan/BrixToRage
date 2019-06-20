@@ -4,31 +4,31 @@ import helpers from "../../Shared/helpers";
 import PartListPartInfoModal from "../../Scenes/PartListView/PartListPartInfoModal";
 import StoreLocEditNameModal from "../../Scenes/StoreLocView/StoreLocEditNameModal";
 import PartListModalColorInfo from "../../Scenes/PartListView/PartListModalColorInfo";
-import StoreViewPartImage from "../../Scenes/StoreView/StoreViewPartImage";
+import SetsPartList from "../../Scenes/SetsView/SetsPartList";
 import {
     MDBCol,
     MDBRow,
-    MDBCard,
-    MDBCardHeader,
+    MDBNav,
+    MDBNavItem,
     MDBBtn,
-    MDBCardBody,
-    MDBTable,
-    MDBTableHead,
-    MDBTableBody,
+    MDBNavLink,
+    MDBIcon,
+    MDBTabContent,
+    MDBTabPane,
     MDBModal,
     MDBModalHeader,
     MDBModalBody,
     MDBModalFooter,
-    MDBSelect,
+    MDBContainer,
     MDBCardImage,
     MDBCardTitle,
     MDBCardText
 } from "mdbreact";
+import SetOwnedModal from "./SetOwnedModal";
 
 export default class SetsSetInfoModal extends Component {
     constructor(props) {
         super(props);
-        this.fetchData = this.fetchData.bind(this);
         this.updateLocation = this.updateLocation.bind(this);
         this.fetchMissingPart = this.fetchMissingPart.bind(this);
         this.state = {
@@ -46,27 +46,10 @@ export default class SetsSetInfoModal extends Component {
         });
         if (this.state.once || this.state.partData == null) {
             this.state.once = false;
-            this.fetchData();
         }
     };
 
-    fetchData(cb) {
-        helpers.fetchHelperWithData("getSet", { rebrickableId: this.props.set.RebrickableId }, setData => {
-            console.dir(setData);
-            this.setState({
-                loading: false,
-                setData: setData
-            });
-            if (cb) {
-                cb();
-            }
-        });
-    }
-
     updateLocation(newLocation, partId, cb) {
-        this.fetchData(function() {
-            return;
-        });
         //on n'attend pas la fin du fetch parce que sinon c'est trop long...
         cb();
     }
@@ -84,10 +67,8 @@ export default class SetsSetInfoModal extends Component {
                 console.dir(part);
             }
         });
-        this.fetchData(function() {
-            this.setState({
-                loading: false
-            });
+        this.setState({
+            loading: false
         });
     }
 
@@ -105,6 +86,7 @@ export default class SetsSetInfoModal extends Component {
                         <strong>Year: </strong> {this.props.set.Year}
                         <br />
                         <strong>Owned: </strong> {this.props.set.isOwned ? this.props.set.quantity : "No"}
+                        <SetOwnedModal set={this.props.set} update={this.props.update} />
                         <br />
                         <strong>In Inventory?: </strong> {this.props.set.inInventory ? "yes" : "No"}
                         <br />
@@ -112,65 +94,7 @@ export default class SetsSetInfoModal extends Component {
                             Fetch missing Part Info
                         </MDBBtn>
                         <br />
-                        <strong>Parts Inventory:</strong>
-                        <br />
-                        {this.state.loading ? (
-                            <p>loading...</p>
-                        ) : (
-                            <MDBRow>
-                                {this.state.setData.map(setPart => (
-                                    <MDBCol md="1" sm="4" key={setPart.Id} style={{ border: "solid 1px black", margin: "0px", padding: "0px" }}>
-                                        <img className="img-fluid" src={setPart.RebrickableImageUrl} />
-                                        <div
-                                            style={{
-                                                width: "100%",
-                                                "font-size": "14px",
-                                                "text-align": "center",
-                                                "font-weight": "bold",
-                                                margin: "0px"
-                                            }}
-                                        >
-                                            #{setPart.RebrickableId}
-                                        </div>
-                                        <div
-                                            style={{
-                                                width: "100%",
-                                                "font-size": "10px",
-                                                "text-align": "center",
-                                                "font-weight": "bold",
-                                                margin: "0px"
-                                            }}
-                                        >
-                                            <PartListModalColorInfo key={setPart.Id} color={setPart} fetchColorInfo={this.fetchColorInfo} />
-                                        </div>
-                                        <div
-                                            style={{
-                                                width: "100%",
-                                                "font-size": "14px",
-                                                "text-align": "center",
-                                                margin: "0px"
-                                            }}
-                                        >
-                                            Loc.: {setPart.LocationCode}
-                                        </div>
-                                        <div
-                                            style={{
-                                                width: "100%",
-                                                "font-size": "10px",
-                                                "text-align": "center",
-                                                "white-space": "nowrap",
-                                                "text-overflow": "ellipsis",
-                                                overflow: "hidden",
-                                                margin: "0px"
-                                            }}
-                                        >
-                                            {setPart.Name}
-                                        </div>
-                                        <PartListPartInfoModal key={setPart.Id} part={setPart} update={this.fetchData} locationUpdate={this.updateLocation} />
-                                    </MDBCol>
-                                ))}
-                            </MDBRow>
-                        )}
+                        <SetsPartList set={this.props.set} updateLocation={this.updateLocation} />
                     </MDBModalBody>
                     <MDBModalFooter>
                         <MDBBtn color="secondary" onClick={this.toggle(4)}>

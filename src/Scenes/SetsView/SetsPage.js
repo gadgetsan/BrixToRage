@@ -24,10 +24,16 @@ export default class SetsPage extends Component {
         super(props);
         this.searchChange = this.searchChange.bind(this);
         this.fetchSets = this.fetchSets.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
         this.state = {
             isLoading: true,
             searchTerm: ""
         };
+    }
+
+    handleSearch(event) {
+        event.preventDefault();
+        this.fetchSets();
     }
 
     fetchSets(page) {
@@ -96,7 +102,7 @@ export default class SetsPage extends Component {
                                                 <td colSpan="6">loading...</td>
                                             </tr>
                                         ) : (
-                                            this.state.sets.map(set => <SetsSetRow key={set.RebrickableId} set={set} />)
+                                            this.state.sets.map(set => <SetsSetRow key={set.RebrickableId} set={set} update={this.fetchSets} />)
                                         )}
                                     </MDBTableBody>
                                 </MDBTable>
