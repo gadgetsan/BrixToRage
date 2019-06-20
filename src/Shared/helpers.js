@@ -16,7 +16,7 @@ module.exports.fetchHelper = (location, callback) => {
 if (document.domain == "pj2yjq46qx.codesandbox.io") {
   module.exports.apiURL = "https://2pl3rqowrj.sse.codesandbox.io";
 } else {
-  module.exports.apiURL = "https://multibackend.herokuapp.com/";
+  module.exports.apiURL = "https://multibackend.herokuapp.com";
 }
 
 module.exports.apiGet = (location, header, data, callback) => {
