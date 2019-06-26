@@ -24,18 +24,12 @@ import {
   MDBCardTitle,
   MDBCardText
 } from "mdbreact";
-import SetOwnedModal from "./SetOwnedModal";
 
-export default class SetsSetInfoModal extends Component {
+export default class StatsPartSourceModal extends Component {
   constructor(props) {
     super(props);
-    this.updateLocation = this.updateLocation.bind(this);
     this.state = {
-      modal: false,
-      partData: null,
-      colorData: null,
-      loading: true,
-      once: true
+      loading: true
     };
   }
 
@@ -48,11 +42,6 @@ export default class SetsSetInfoModal extends Component {
     }
   };
 
-  updateLocation(newLocation, partId, cb) {
-    //on n'attend pas la fin du fetch parce que sinon c'est trop long...
-    cb();
-  }
-
   render() {
     return (
       <>
@@ -62,7 +51,7 @@ export default class SetsSetInfoModal extends Component {
           onClick={this.toggle(4)}
           className="actionButton"
         >
-          <i className="fa fa-ellipsis-h" />
+          BUTTON
         </MDBBtn>
         <MDBModal
           isOpen={this.state.modal}
@@ -70,26 +59,8 @@ export default class SetsSetInfoModal extends Component {
           size="lg"
           size="fluid"
         >
-          <MDBModalHeader toggle={this.toggle(4)}>
-            Information for {this.props.set.Name}
-          </MDBModalHeader>
-          <MDBModalBody style={{ textAlign: "left" }}>
-            <strong>Name: </strong> {this.props.set.Name}
-            <br />
-            <strong>Year: </strong> {this.props.set.Year}
-            <br />
-            <strong>Owned: </strong>{" "}
-            {this.props.set.isOwned ? this.props.set.quantity : "No"}
-            <SetOwnedModal set={this.props.set} update={this.props.update} />
-            <br />
-            <strong>In Inventory?: </strong>{" "}
-            {this.props.set.inInventory ? "yes" : "No"}
-            <br />
-            <SetsPartList
-              set={this.props.set}
-              updateLocation={this.updateLocation}
-            />
-          </MDBModalBody>
+          <MDBModalHeader toggle={this.toggle(4)}>HEADER</MDBModalHeader>
+          <MDBModalBody />
           <MDBModalFooter>
             <MDBBtn color="secondary" onClick={this.toggle(4)}>
               Close
