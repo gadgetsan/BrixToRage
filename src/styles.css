@@ -1,32 +1,36 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .card {
-    margin: 10px;
+  margin: 10px;
 }
 
 .lego-container {
-    border: solid 1px #dee2e6;
+  border: solid 1px #dee2e6;
 }
 
 .partsTable tbody tr td .actionButton {
-    padding: 0.5rem 0.5rem !important;
-    margin: 0 !important;
-    visibility: hidden;
+  padding: 0.5rem 0.5rem !important;
+  margin: 0 !important;
+  visibility: hidden;
 }
 .partsTable tbody tr:hover td .actionButton {
-    visibility: visible;
+  visibility: visible;
 }
 .partsTable tbody .actionCell {
-    padding-top: 5px;
-    padding-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
 }
 
 #searchForm {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 .modal {
-    overflow: auto !important;
+  overflow: auto !important;
+}
+
+.modal-dialog {
+  color: #212529;
 }
