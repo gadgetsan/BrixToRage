@@ -13,7 +13,7 @@ module.exports.fetchHelper = (location, callback) => {
   module.exports.fetchHelperWithData(location, {}, callback);
 };
 
-if (document.domain == "pj2yjq46qx.csb.dev") {
+if (document.domain == "pj2yjq46qx.codesandbox.io") {
   module.exports.apiURL = "https://2pl3rqowrj.sse.codesandbox.io";
 } else {
   module.exports.apiURL = "https://multibackend.herokuapp.com";
@@ -87,7 +87,7 @@ module.exports.fetchHelperWithData = (location, data, callback) => {
 
 module.exports.getAuthData = () => {
   let user = JSON.parse(localStorage.getItem("user"));
-  console.dir(user);
+  //console.dir(user);
   var authData = window.btoa(user.email + ":" + user.password);
   return authData;
 };

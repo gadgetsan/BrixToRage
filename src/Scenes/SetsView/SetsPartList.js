@@ -5,6 +5,7 @@ import PartListPartInfoModal from "../../Scenes/PartListView/PartListPartInfoMod
 import StoreLocEditNameModal from "../../Scenes/StoreLocView/StoreLocEditNameModal";
 import PartListModalColorInfo from "../../Scenes/PartListView/PartListModalColorInfo";
 import StoreViewPartImage from "../../Scenes/StoreView/StoreViewPartImage";
+import update from "react-addons-update"; // ES6
 import {
   MDBCol,
   MDBRow,
@@ -50,17 +51,27 @@ export default class SetsPartList extends Component {
     this.setState({
       loading: true
     });
-    this.state.setData.map(part => {
+    this.state.setData.map((part, index) => {
       if (!part.Name) {
         //si la piece ne possède pas de nom, on veux la fetcher
+        //console.log("Index: " + index);
+        //console.dir(part);
         helpers.fetchHelperWithData(
           "getPart",
           { rebrickableId: part.RebrickableId },
           partData => {
+            //Note on ne recoit pas la couleur , il faut merger les informations
+            var mergedInfos = { ...part, ...partData };
+            //console.dir(mergedInfos);
+            var toUpdate = [];
+            toUpdate[index] = { $set: mergedInfos };
+            this.setState({
+              setData: update(this.state.setData, toUpdate)
+            });
             return;
           }
         );
-        console.dir(part);
+        return true;
       }
     });
     this.setState({
@@ -78,7 +89,7 @@ export default class SetsPartList extends Component {
           loading: false,
           setData: setData
         });
-        if (cb) {
+        if (cb && {}.toString.call(cb) === "[object Function]") {
           cb();
         }
       }
@@ -122,12 +133,12 @@ export default class SetsPartList extends Component {
                 <div
                   style={{
                     width: "100%",
-                    "font-size": "14px",
-                    "text-align": "center",
-                    "font-weight": "bold",
-                    "white-space": "nowrap",
+                    fontSize: "14px",
+                    textAlign: "center",
+                    fontWeight: "bold",
+                    whiteSpace: "nowrap",
                     margin: "0px",
-                    "text-overflow": "ellipsis",
+                    textOverflow: "ellipsis",
                     overflow: "hidden"
                   }}
                 >
@@ -136,17 +147,17 @@ export default class SetsPartList extends Component {
                 <div
                   style={{
                     width: "100%",
-                    "font-size": "10px",
-                    "text-align": "center",
-                    "font-weight": "bold",
+                    fontsize: "10px",
+                    textAlign: "center",
+                    fontWeight: "bold",
                     margin: "0px"
                   }}
                 />
                 <div
                   style={{
                     width: "100%",
-                    "font-size": "14px",
-                    "text-align": "center",
+                    fontSize: "14px",
+                    textAlign: "center",
                     margin: "0px"
                   }}
                 >
@@ -155,10 +166,10 @@ export default class SetsPartList extends Component {
                 <div
                   style={{
                     width: "100%",
-                    "font-size": "10px",
-                    "text-align": "center",
-                    "white-space": "nowrap",
-                    "text-overflow": "ellipsis",
+                    fontSize: "10px",
+                    textAlign: "center",
+                    whiteSpace: "nowrap",
+                    textOverflow: "ellipsis",
                     overflow: "hidden",
                     margin: "0px"
                   }}

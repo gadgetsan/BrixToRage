@@ -59,8 +59,17 @@ export default class StatsPartSourceModal extends Component {
           size="lg"
           size="fluid"
         >
-          <MDBModalHeader toggle={this.toggle(4)}>HEADER</MDBModalHeader>
+          <MDBModalHeader toggle={this.toggle(4)}>
+            Part Source validation report
+          </MDBModalHeader>
           <MDBModalBody>
+            Total number of Parts:<strong>12345</strong>
+            <br />
+            Parts From unknown Location:<strong>12345</strong>
+            <br />
+            Parts that should be in my collection but aren't:
+            <strong>123</strong>
+            <br />
             <MDBRow>
               <MDBCol
                 md="3"
