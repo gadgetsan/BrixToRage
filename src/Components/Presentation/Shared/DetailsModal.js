@@ -9,12 +9,12 @@ import {
     MDBModalFooter
 } from "mdbreact";
 
-import { fetchElement } from "/src/Actions/shared";
+import { fetchElement } from "Actions/shared";
 import {
     getElement,
     getElementError,
     getElementIsLoading
-} from "/src/Selectors/shared";
+} from "Selectors/shared";
 
 export class DetailsModal extends Component {
     constructor(props) {

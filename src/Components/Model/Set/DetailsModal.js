@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { MDBRow } from "mdbreact";
 
-import { mapIfLoaded } from "/src/Shared/helpers";
+import { mapIfLoaded } from "Shared/helpers";
 
-import PartTableCell from "/src/Components/Model/PartColor/TableCell";
+import PartTableCell from "Components/Model/PartColor/TableCell";
 
 export default class PartDetailsModal extends Component {
     render() {

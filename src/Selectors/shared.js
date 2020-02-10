@@ -1,4 +1,4 @@
-import { toPlural } from "/src/Shared/helpers";
+import { toPlural } from "Shared/helpers";
 
 //TODO: Cache this with 'Reselect'
 

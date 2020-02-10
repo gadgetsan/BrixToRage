@@ -1,4 +1,4 @@
-import { listReduce } from "/src/Shared/helpers";
+import { listReduce } from "Shared/helpers";
 
 export default class FetchReducer {
     constructor(singleType, listType) {

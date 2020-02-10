@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getContrastYIQ } from "/src/Shared/helpers";
+import { getContrastYIQ } from "Shared/helpers";
 
 export default class ColorInlineDisplay extends Component {
     render() {

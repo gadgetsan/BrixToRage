@@ -4,8 +4,8 @@ import TableList from "../Shared/TableList";
 import Pagination from "../Shared/Pagination";
 import SearchForm from "../Shared/SearchForm";
 import { connect } from "react-redux";
-import { fetchList } from "/src/Actions/shared";
-import ImportSet from "/src/Components/Action/ImportSet";
+import { fetchList } from "Actions/shared";
+import ImportSet from "Components/Action/ImportSet";
 
 import SetTableRow from "../../Model/Set/TableRow";
 import {
@@ -17,7 +17,7 @@ import {
     MDBCardTitle
 } from "mdbreact";
 
-import { getSets } from "/src/Selectors/sets";
+import { getSets } from "Selectors/sets";
 
 //FOLLOWING THOSE GUIDE:
 //https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3

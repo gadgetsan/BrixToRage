@@ -8,7 +8,7 @@ import {
     MDBModalFooter,
     MDBInput
 } from "mdbreact";
-import { importSet } from "/src/Actions/sets";
+import { importSet } from "Actions/sets";
 
 export class SetsImportModal extends Component {
     constructor(props) {

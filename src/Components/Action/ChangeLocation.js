@@ -8,9 +8,9 @@ import {
     MDBModalFooter
 } from "mdbreact";
 import { connect } from "react-redux";
-import { changeLocation } from "/src/Actions/parts";
-import { fetchTemporaryList } from "/src/Actions/shared";
-import { getList, getListError, getListIsLoading } from "/src/Selectors/shared";
+import { changeLocation } from "Actions/parts";
+import { fetchTemporaryList } from "Actions/shared";
+import { getList, getListError, getListIsLoading } from "Selectors/shared";
 
 export class ChangeLocation extends Component {
     constructor(props) {

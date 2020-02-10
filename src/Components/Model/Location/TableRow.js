@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import DetailsModal from "/src/Components/Presentation/Shared/DetailsModal";
-import LocationDetailsModal from "/src/Components/Model/Location/DetailsModal";
+import DetailsModal from "Components/Presentation/Shared/DetailsModal";
+import LocationDetailsModal from "Components/Model/Location/DetailsModal";
 
 export default class LocationTableRow extends Component {
     render() {

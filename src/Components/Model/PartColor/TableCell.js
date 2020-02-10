@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { MDBCol } from "mdbreact";
-import { getContrastYIQ } from "/src/Shared/helpers";
+import { getContrastYIQ } from "Shared/helpers";
 
-import { mapIfLoaded } from "/src/Shared/helpers";
-import LocationInlineDisplay from "/src/Components/Model/Location/Inline";
-import ChangeLocation from "/src/Components/Action/ChangeLocation";
+import { mapIfLoaded } from "Shared/helpers";
+import LocationInlineDisplay from "Components/Model/Location/Inline";
+import ChangeLocation from "Components/Action/ChangeLocation";
 
-import DetailsModal from "/src/Components/Presentation/Shared/DetailsModal";
-import PartDetailsModal from "/src/Components/Model/Part/DetailsModal";
+import DetailsModal from "Components/Presentation/Shared/DetailsModal";
+import PartDetailsModal from "Components/Model/Part/DetailsModal";
 
 export default class TableCell extends Component {
     constructor(props) {

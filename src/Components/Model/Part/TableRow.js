@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import DetailsModal from "/src/Components/Presentation/Shared/DetailsModal";
-import PartDetailsModal from "/src/Components/Model/Part/DetailsModal";
-import LocationInlineDisplay from "/src/Components/Model/Location/Inline";
+import DetailsModal from "Components/Presentation/Shared/DetailsModal";
+import PartDetailsModal from "Components/Model/Part/DetailsModal";
+import LocationInlineDisplay from "Components/Model/Location/Inline";
 
 export default class PartTableRow extends Component {
     render() {

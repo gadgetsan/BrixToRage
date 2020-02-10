@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { mapIfLoaded } from "/src/Shared/helpers";
+import { mapIfLoaded } from "Shared/helpers";
 
-import ColorInlineDisplay from "/src/Components/Model/Color/Inline";
-import SetInlineDisplay from "/src/Components/Model/Set/Inline";
-import LocationInlineDisplay from "/src/Components/Model/Location/Inline";
+import ColorInlineDisplay from "Components/Model/Color/Inline";
+import SetInlineDisplay from "Components/Model/Set/Inline";
+import LocationInlineDisplay from "Components/Model/Location/Inline";
 
-import ChangeLocation from "/src/Components/Action/ChangeLocation";
+import ChangeLocation from "Components/Action/ChangeLocation";
 
 export default class PartDetailsModal extends Component {
     render() {

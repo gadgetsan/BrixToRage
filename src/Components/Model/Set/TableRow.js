@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import DetailsModal from "/src/Components/Presentation/Shared/DetailsModal";
-import SetDetailsModal from "/src/Components/Model/Set/DetailsModal";
+import DetailsModal from "Components/Presentation/Shared/DetailsModal";
+import SetDetailsModal from "Components/Model/Set/DetailsModal";
 
 export default class SetTableRow extends Component {
     render() {

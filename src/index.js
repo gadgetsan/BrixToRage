@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
-import PartsPage from "./../src/Components/Presentation/Pages/Parts";
-import SetsPage from "./../src/Components/Presentation/Pages/Sets";
-import LocationsPage from "./../src/Components/Presentation/Pages/Locations";
-import configureStore from "./../src/Store/configure";
+import PartsPage from "Components/Presentation/Pages/Parts";
+import SetsPage from "Components/Presentation/Pages/Sets";
+import LocationsPage from "Components/Presentation/Pages/Locations";
+import configureStore from "Store/configure";
 
 import "./styles.css";
 
