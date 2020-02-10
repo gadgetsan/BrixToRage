@@ -41,13 +41,17 @@ export default class SetsPage extends Component {
             page = 1;
         }
         this.setState({ isLoading: true, currentPage: page });
-        helpers.fetchHelperWithData("getSets", { searchTerm: this.state.searchTerm, currentPage: page }, sets => {
-            this.setState({
-                sets: sets,
-                isLoading: false
-            });
-            //console.dir(parts);
-        });
+        helpers.fetchHelperWithData(
+            "getSets",
+            { searchTerm: this.state.searchTerm, currentPage: page },
+            sets => {
+                this.setState({
+                    sets: sets,
+                    isLoading: false
+                });
+                //console.dir(parts);
+            }
+        );
     }
 
     componentDidMount() {
@@ -71,7 +75,11 @@ export default class SetsPage extends Component {
                                 <MDBCardTitle>
                                     <MDBRow>
                                         <MDBCol size="4">
-                                            <form className="form-inline mt-4 mb-4" id="searchForm" onSubmit={this.handleSearch}>
+                                            <form
+                                                className="form-inline mt-4 mb-4"
+                                                id="searchForm"
+                                                onSubmit={this.handleSearch}
+                                            >
                                                 <MDBIcon icon="search" />
                                                 <input
                                                     className="form-control form-control-sm ml-3 w-75"
@@ -79,13 +87,17 @@ export default class SetsPage extends Component {
                                                     placeholder="Search"
                                                     aria-label="Search"
                                                     label="Search"
-                                                    value={this.state.searchTerm}
+                                                    value={
+                                                        this.state.searchTerm
+                                                    }
                                                     onChange={this.searchChange}
                                                 />
                                             </form>
                                         </MDBCol>
                                         <MDBCol size="4">
-                                            <SetsImportModal update={this.fetchSets} />
+                                            <SetsImportModal
+                                                update={this.fetchSets}
+                                            />
                                         </MDBCol>
                                     </MDBRow>
                                 </MDBCardTitle>
@@ -94,6 +106,7 @@ export default class SetsPage extends Component {
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
+                                            <th>Owned</th>
                                         </tr>
                                     </MDBTableHead>
                                     <MDBTableBody>
@@ -102,7 +115,13 @@ export default class SetsPage extends Component {
                                                 <td colSpan="6">loading...</td>
                                             </tr>
                                         ) : (
-                                            this.state.sets.map(set => <SetsSetRow key={set.RebrickableId} set={set} update={this.fetchSets} />)
+                                            this.state.sets.map(set => (
+                                                <SetsSetRow
+                                                    key={set.RebrickableId}
+                                                    set={set}
+                                                    update={this.fetchSets}
+                                                />
+                                            ))
                                         )}
                                     </MDBTableBody>
                                 </MDBTable>

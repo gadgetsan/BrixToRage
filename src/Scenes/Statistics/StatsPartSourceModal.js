@@ -5,6 +5,7 @@ import PartListPartInfoModal from "../../Scenes/PartListView/PartListPartInfoMod
 import StoreLocEditNameModal from "../../Scenes/StoreLocView/StoreLocEditNameModal";
 import PartListModalColorInfo from "../../Scenes/PartListView/PartListModalColorInfo";
 import SetsPartList from "../../Scenes/SetsView/SetsPartList";
+import PartSourceCell from "../../Scenes/Statistics/PartSourceCell";
 import {
   MDBCol,
   MDBRow,
@@ -71,84 +72,13 @@ export default class StatsPartSourceModal extends Component {
             <strong>123</strong>
             <br />
             <MDBRow>
-              <MDBCol
-                md="3"
-                sm="6"
-                style={{
-                  border: "solid 1px black",
-                  margin: "0px",
-                  padding: "0px"
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "12px",
-                    "white-space": "nowrap",
-                    margin: "0px",
-                    "text-overflow": "ellipsis",
-                    overflow: "hidden"
-                  }}
-                >
-                  24x #12345 [Technic Axle and Pin Connector Perpendicular]
-                </div>
-                <div
-                  style={{
-                    fontSize: "10px",
-                    "white-space": "nowrap",
-                    margin: "0px",
-                    "text-overflow": "ellipsis",
-                    overflow: "hidden"
-                  }}
-                >
-                  <span
-                    style={{
-                      backgroundColor: "rgb(160, 165, 169)"
-                    }}
-                  >
-                    5x Light Bluish Grey
-                  </span>{" "}
-                  From [Tatooine Battle Pack]
-                </div>
-                <div
-                  style={{
-                    fontSize: "10px",
-                    "white-space": "nowrap",
-                    margin: "0px",
-                    "text-overflow": "ellipsis",
-                    overflow: "hidden"
-                  }}
-                >
-                  <span
-                    style={{
-                      backgroundColor: "rgb(228, 205, 158)"
-                    }}
-                  >
-                    5x Tan
-                  </span>{" "}
-                  From [Yoda's Jedi Starfighter]
-                </div>
-                <div
-                  style={{
-                    fontSize: "10px"
-                  }}
-                >
-                  Missing:
-                  <span
-                    style={{
-                      backgroundColor: "rgb(228, 205, 158)"
-                    }}
-                  >
-                    10x Tan
-                  </span>{" "}
-                  <span
-                    style={{
-                      backgroundColor: "rgb(160, 165, 169)"
-                    }}
-                  >
-                    4x Light Bluish Grey
-                  </span>
-                </div>
-              </MDBCol>
+              <PartSourceCell />
+              <PartSourceCell />
+              <PartSourceCell />
+              <PartSourceCell />
+              <PartSourceCell />
+              <PartSourceCell />
+              <PartSourceCell />
             </MDBRow>
           </MDBModalBody>
           <MDBModalFooter>
