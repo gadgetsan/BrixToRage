@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { MDBRow } from "mdbreact";
 
 import { mapIfLoaded } from "Shared/helpers";
-import PartTableCell from "Components/Model/PartColor/TableCell";
+import PartTableCell from "Components/Model/Part/TableCell";
 
 export default class LocationDetailsModal extends Component {
     render() {
@@ -13,12 +13,14 @@ export default class LocationDetailsModal extends Component {
                 {this.props.item.Name}
                 <br />
                 <MDBRow>
-                    {mapIfLoaded(this.props.item.PartColor, partColor => {
+                    {mapIfLoaded(this.props.item.Parts, part => {
                         return (
                             <PartTableCell
-                                key={partColor.id}
-                                item={partColor}
-                                link="parts_locations"
+                                key={part.id}
+                                item={part}
+                                quantity={
+                                    part.PartColor.parts_locations.Quantity
+                                }
                             />
                         );
                     })}

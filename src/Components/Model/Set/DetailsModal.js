@@ -3,7 +3,7 @@ import { MDBRow } from "mdbreact";
 
 import { mapIfLoaded } from "Shared/helpers";
 
-import PartTableCell from "Components/Model/PartColor/TableCell";
+import PartColorTableCell from "Components/Model/PartColor/TableCell";
 
 export default class PartDetailsModal extends Component {
     render() {
@@ -34,7 +34,7 @@ export default class PartDetailsModal extends Component {
                 <MDBRow>
                     {mapIfLoaded(sortedPart, partColor => {
                         return (
-                            <PartTableCell
+                            <PartColorTableCell
                                 key={partColor.id}
                                 item={partColor}
                                 link="sets_parts"

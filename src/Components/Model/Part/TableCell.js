@@ -12,7 +12,6 @@ import PartDetailsModal from "Components/Model/Part/DetailsModal";
 export default class TableCell extends Component {
     constructor(props) {
         super(props);
-        this.Color = this.props.item[this.props.link].Color;
         this.linked = this.props.item[this.props.link];
     }
     render() {
@@ -23,14 +22,12 @@ export default class TableCell extends Component {
                 style={{
                     border: "solid 1px black",
                     margin: "0px",
-                    padding: "0px",
-                    backgroundColor: "#" + this.Color.Hex,
-                    color: getContrastYIQ(this.Color.Hex)
+                    padding: "0px"
                 }}
             >
                 <img
                     className="img-fluid"
-                    src={this.props.item.ImageURL}
+                    src={this.props.item.RebrickableImageUrl}
                     alt="the brick"
                 />
                 <div
@@ -45,11 +42,10 @@ export default class TableCell extends Component {
                         overflow: "hidden"
                     }}
                 >
-                    {this.linked.Quantity}x #
-                    {this.props.item.Part.RebrickableId}
+                    {this.props.quantity}x #{this.props.item.RebrickableId}
                     <DetailsModal
-                        title={"part #" + this.props.item.Part.RebrickableId}
-                        id={this.props.item.Part.id}
+                        title={"part #" + this.props.item.RebrickableId}
+                        id={this.props.item.id}
                         type="part"
                         size="lg"
                         customButton={
@@ -74,38 +70,6 @@ export default class TableCell extends Component {
                 <div
                     style={{
                         width: "100%",
-                        fontSize: "14px",
-                        textAlign: "center",
-                        margin: "0px"
-                    }}
-                >
-                    {mapIfLoaded(
-                        this.props.item.PartLocations,
-                        partLocation => {
-                            return (
-                                <LocationInlineDisplay
-                                    key={partLocation.Location.id}
-                                    location={partLocation.Location}
-                                    hideName={true}
-                                />
-                            );
-                        },
-                        "None"
-                    )}
-
-                    <ChangeLocation
-                        part={this.props.item.Part}
-                        customButton={
-                            <a>
-                                {" "}
-                                <i className="fa fa-pen" />
-                            </a>
-                        }
-                    />
-                </div>
-                <div
-                    style={{
-                        width: "100%",
                         fontSize: "10px",
                         textAlign: "center",
                         whiteSpace: "nowrap",
@@ -114,7 +78,7 @@ export default class TableCell extends Component {
                         margin: "0px"
                     }}
                 >
-                    {this.props.item.Part.Name}
+                    {this.props.item.Name}
                 </div>
             </MDBCol>
         );
