@@ -6,6 +6,10 @@ import { Provider } from "react-redux";
 import PartsPage from "Components/Presentation/Pages/Parts";
 import SetsPage from "Components/Presentation/Pages/Sets";
 import LocationsPage from "Components/Presentation/Pages/Locations";
+import PrivateRoute from "Components/Navigation/PrivateRoute";
+
+import LoginPage from "Components/Authentication/Login";
+
 import configureStore from "Store/configure";
 
 import "./styles.css";
@@ -37,11 +41,37 @@ function App() {
         <Provider store={store}>
             <Router basename={process.env.PUBLIC_URL}>
                 <>
-                    <Route path="/" exact component={LocationsPage} />
-                    <Route path="/parts" exact component={PartsPage} />
-                    <Route path="/sets" exact component={SetsPage} />
-                    <Route path="/stats" exact component={SetsPage} />
-                    <Route path="/storage" exact component={LocationsPage} />
+                    <PrivateRoute
+                        path="/"
+                        exact
+                        component={LocationsPage}
+                        store={store}
+                    />
+                    <PrivateRoute
+                        path="/parts"
+                        exact
+                        component={PartsPage}
+                        store={store}
+                    />
+                    <PrivateRoute
+                        path="/sets"
+                        exact
+                        component={SetsPage}
+                        store={store}
+                    />
+                    <PrivateRoute
+                        path="/stats"
+                        exact
+                        component={SetsPage}
+                        store={store}
+                    />
+                    <PrivateRoute
+                        path="/storage"
+                        exact
+                        component={LocationsPage}
+                        store={store}
+                    />
+                    <Route path="/login" exact component={LoginPage} />
                 </>
             </Router>
         </Provider>

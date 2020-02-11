@@ -1,9 +1,10 @@
-import { combineReducers } from "redux";
+//import { combineReducers } from "redux";
 import FetchReducer from "./FetchReducer";
 
 import { apiURL } from "./shared";
 import { updateLocation } from "./parts";
 import { importSet } from "./sets";
+import { initUser, authenticating } from "./authentication";
 
 export default function(oldState, action) {
     var fetchers = [
@@ -12,7 +13,13 @@ export default function(oldState, action) {
         new FetchReducer("location", "locations"),
         new FetchReducer("temp", "temp")
     ];
-    var reducersList = [apiURL, updateLocation, importSet];
+    var reducersList = [
+        apiURL,
+        updateLocation,
+        importSet,
+        initUser,
+        authenticating
+    ];
     //on ajoute les 'fetchers' à la liste
     fetchers.forEach(fetch => {
         reducersList.push(fetch.reduce);

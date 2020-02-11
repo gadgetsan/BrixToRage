@@ -12,7 +12,8 @@ import {
     MDBContainer
 } from "mdbreact";
 
-import CustomNavLink from "./CustomNavLink";
+import CustomNavLink from "Components/Navigation/CustomNavLink";
+
 const CustomNavLinkWithRouter = withRouter(props => (
     <CustomNavLink {...props} />
 ));
