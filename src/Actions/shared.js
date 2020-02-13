@@ -1,3 +1,5 @@
+import { authFromUser } from "Shared/helpers";
+
 export function error(stateType, error, id) {
     return {
         type: "ERROR",
@@ -74,7 +76,9 @@ export function fetchList(stateType, page, search) {
         //immediatement, on lance l'action qui dit que ça load
         dispatch(isLoading(stateType, true));
         //ensuite, on fait la requête
-        fetch(url)
+        fetch(url, {
+            headers: { Authorization: authFromUser(state.user) }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);
