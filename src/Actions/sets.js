@@ -1,10 +1,15 @@
+import { authFromUser } from "Shared/helpers";
+
 export function importSet(setCode) {
     return (dispatch, getState) => {
         var state = getState();
         var url = state.apiURL + "/UpdateSet/" + setCode;
         dispatch(importLoading());
         //ensuite, on fait la requête
-        fetch(url, { method: "POST" })
+        fetch(url, {
+            method: "POST",
+            headers: { Authorization: authFromUser(state.user) }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);

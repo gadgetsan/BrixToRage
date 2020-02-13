@@ -1,10 +1,15 @@
+import { authFromUser } from "Shared/helpers";
+
 export function changeLocation(partId, locationId) {
     return (dispatch, getState) => {
         var state = getState();
         var url =
             state.apiURL + "/Part/" + partId + "/ChangeLocation/" + locationId;
         //ensuite, on fait la requête
-        fetch(url, { method: "POST" })
+        fetch(url, {
+            method: "POST",
+            headers: { Authorization: authFromUser(state.user) }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);

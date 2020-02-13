@@ -44,7 +44,9 @@ export function fetchTemporaryList(stateType, page, search) {
         //immediatement, on lance l'action qui dit que ça load
         dispatch(isLoading("temp", true));
         //ensuite, on fait la requête
-        fetch(url)
+        fetch(url, {
+            headers: { Authorization: authFromUser(state.user) }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);
@@ -105,7 +107,9 @@ export function fetchElement(elementType, id) {
         //immediatement, on lance l'action qui dit que ça load
         dispatch(isLoading(elementType, true, id));
         //ensuite, on fait la requête
-        fetch(url)
+        fetch(url, {
+            headers: { Authorization: authFromUser(state.user) }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);
