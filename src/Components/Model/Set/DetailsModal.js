@@ -4,6 +4,7 @@ import { MDBRow } from "mdbreact";
 import { mapIfLoaded } from "Shared/helpers";
 
 import PartColorTableCell from "Components/Model/PartColor/TableCell";
+import ChangeQuantity from "Components/Action/ChangeQuantity";
 
 export default class PartDetailsModal extends Component {
     render() {
@@ -27,9 +28,30 @@ export default class PartDetailsModal extends Component {
                 <strong>Name: </strong>
                 {this.props.item.Name}
                 <br />
-                <strong>Quantity: </strong>???
+                <strong>Quantity Owned: </strong>
+                {this.props.item.sets_users.length > 0
+                    ? this.props.item.sets_users[0].Quantity
+                    : 0}
+                <ChangeQuantity
+                    set={this.props.item}
+                    quantity={
+                        this.props.item.sets_users.length > 0
+                            ? this.props.item.sets_users[0].Quantity
+                            : 0
+                    }
+                    customButton={
+                        <a>
+                            {" "}
+                            <i className="fa fa-pen" />
+                        </a>
+                    }
+                />
                 <br />
-                <strong>Years: </strong>???
+                <strong>Built: </strong>
+                {this.props.item.sets_users.length > 0 &&
+                this.props.item.sets_users[0].isBuilt
+                    ? "Yes"
+                    : "No"}
                 <br />
                 <MDBRow>
                     {mapIfLoaded(sortedPart, partColor => {

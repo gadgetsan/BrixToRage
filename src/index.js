@@ -44,7 +44,7 @@ function App() {
                     <PrivateRoute
                         path="/"
                         exact
-                        component={LocationsPage}
+                        component={SetsPage}
                         store={store}
                     />
                     <PrivateRoute

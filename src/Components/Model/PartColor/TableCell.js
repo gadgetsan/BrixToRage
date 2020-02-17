@@ -36,7 +36,7 @@ export default class TableCell extends Component {
                 <div
                     style={{
                         width: "100%",
-                        fontSize: "14px",
+                        fontSize: "10px",
                         textAlign: "center",
                         fontWeight: "bold",
                         whiteSpace: "nowrap",
@@ -74,7 +74,7 @@ export default class TableCell extends Component {
                 <div
                     style={{
                         width: "100%",
-                        fontSize: "14px",
+                        fontSize: "12px",
                         textAlign: "center",
                         margin: "0px"
                     }}
@@ -82,12 +82,14 @@ export default class TableCell extends Component {
                     {mapIfLoaded(
                         this.props.item.PartLocations,
                         partLocation => {
-                            return (
+                            return partLocation.Location ? (
                                 <LocationInlineDisplay
                                     key={partLocation.Location.id}
                                     location={partLocation.Location}
                                     hideName={true}
                                 />
+                            ) : (
+                                "None"
                             );
                         },
                         "None"

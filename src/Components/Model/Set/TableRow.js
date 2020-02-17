@@ -24,7 +24,7 @@ export default class SetTableRow extends Component {
                         title={"part #" + this.props.item.RebrickableId}
                         id={this.props.item.id}
                         type="set"
-                        size="fluid"
+                        size="lg"
                     >
                         <SetDetailsModal id={this.props.item.id} />{" "}
                     </DetailsModal>

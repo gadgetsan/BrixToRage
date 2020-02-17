@@ -5,6 +5,16 @@ export function initUser(state, action) {
         toReturn.authURL = "https://multibackend.herokuapp.com/auth/";
         if (document.domain === "pj2yjq46qx.csb.app") {
             toReturn.authURL = "https://21sle.sse.codesandbox.io/auth/";
+            toReturn.user = {
+                id: 7,
+                Name: "DEBUG",
+                PwHash: "",
+                Email: "test1@test.com",
+                valid: true,
+                password: "RIEN",
+                authenticated: true
+            };
+            //console.log(toReturn.user);
         }
         return toReturn;
     } else {
@@ -19,7 +29,7 @@ export function authenticating(state, action) {
             newState.user = action.user;
             newState.user.password = action.password;
             newState.user.authenticated = true;
-            console.log(newState.user);
+            //console.log(newState.user);
             return newState;
         default:
             return state;

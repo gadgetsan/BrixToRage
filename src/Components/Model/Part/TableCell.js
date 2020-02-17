@@ -33,7 +33,7 @@ export default class TableCell extends Component {
                 <div
                     style={{
                         width: "100%",
-                        fontSize: "14px",
+                        fontSize: "12px",
                         textAlign: "center",
                         fontWeight: "bold",
                         whiteSpace: "nowrap",
@@ -42,7 +42,6 @@ export default class TableCell extends Component {
                         overflow: "hidden"
                     }}
                 >
-                    {this.props.quantity}x #{this.props.item.RebrickableId}
                     <DetailsModal
                         title={"part #" + this.props.item.RebrickableId}
                         id={this.props.item.id}
@@ -57,6 +56,7 @@ export default class TableCell extends Component {
                     >
                         <PartDetailsModal />{" "}
                     </DetailsModal>
+                    {this.props.quantity}x #{this.props.item.RebrickableId}
                 </div>
                 <div
                     style={{
