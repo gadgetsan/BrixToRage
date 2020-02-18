@@ -28,11 +28,22 @@ export default class TableCell extends Component {
                     color: getContrastYIQ(this.Color.Hex)
                 }}
             >
-                <img
-                    className="img-fluid"
-                    src={this.props.item.ImageURL}
-                    alt="the brick"
-                />
+                <DetailsModal
+                    title={"part #" + this.props.item.Part.RebrickableId}
+                    id={this.props.item.Part.id}
+                    type="part"
+                    size="lg"
+                    customButton={
+                        <img
+                            className="img-fluid"
+                            style={{ cursor: "pointer" }}
+                            src={this.props.item.ImageURL}
+                            alt="the brick"
+                        />
+                    }
+                >
+                    <PartDetailsModal />{" "}
+                </DetailsModal>
                 <div
                     style={{
                         width: "100%",
@@ -47,20 +58,6 @@ export default class TableCell extends Component {
                 >
                     {this.linked.Quantity}x #
                     {this.props.item.Part.RebrickableId}
-                    <DetailsModal
-                        title={"part #" + this.props.item.Part.RebrickableId}
-                        id={this.props.item.Part.id}
-                        type="part"
-                        size="lg"
-                        customButton={
-                            <a>
-                                {" "}
-                                <i className="fa fa-info" />
-                            </a>
-                        }
-                    >
-                        <PartDetailsModal />{" "}
-                    </DetailsModal>
                 </div>
                 <div
                     style={{

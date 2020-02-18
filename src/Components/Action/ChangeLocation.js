@@ -77,7 +77,12 @@ export class ChangeLocation extends Component {
                                     location.Name +
                                     " (" +
                                     location.LocationCode +
-                                    ")"
+                                    ") - " +
+                                    location.parts_locations.reduce(
+                                        (acc, value) => acc + value.Quantity,
+                                        0
+                                    ) +
+                                    " parts"
                                 );
                             }}
                             getOptionValue={location => {

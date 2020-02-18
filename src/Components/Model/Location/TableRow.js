@@ -5,10 +5,21 @@ import LocationDetailsModal from "Components/Model/Location/DetailsModal";
 
 export default class LocationTableRow extends Component {
     render() {
+        var parts = this.props.item.parts_locations.reduce(function(map, obj) {
+            map[obj.PartId] = obj.PartId;
+            return map;
+        }, {});
         return (
             <tr>
                 <td>{this.props.item.LocationCode}</td>
                 <td>{this.props.item.Name}</td>
+                <td>
+                    {this.props.item.parts_locations.reduce(
+                        (acc, value) => acc + value.Quantity,
+                        0
+                    )}
+                </td>
+                <td>{Object.keys(parts).length}</td>
 
                 <td className="actionCell">
                     <DetailsModal

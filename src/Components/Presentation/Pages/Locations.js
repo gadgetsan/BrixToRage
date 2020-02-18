@@ -90,6 +90,8 @@ export class Locations extends Component {
                                     >
                                         <th>Code</th>
                                         <th>Name</th>
+                                        <th>Parts Count</th>
+                                        <th>Distinct Parts</th>
                                         <th>Actions</th>
                                     </TableList>
                                 ) : null}

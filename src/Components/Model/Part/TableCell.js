@@ -25,11 +25,22 @@ export default class TableCell extends Component {
                     padding: "0px"
                 }}
             >
-                <img
-                    className="img-fluid"
-                    src={this.props.item.RebrickableImageUrl}
-                    alt="the brick"
-                />
+                <DetailsModal
+                    title={"part #" + this.props.item.RebrickableId}
+                    id={this.props.item.id}
+                    type="part"
+                    size="lg"
+                    customButton={
+                        <img
+                            className="img-fluid"
+                            style={{ cursor: "pointer" }}
+                            src={this.props.item.RebrickableImageUrl}
+                            alt="the brick"
+                        />
+                    }
+                >
+                    <PartDetailsModal />{" "}
+                </DetailsModal>
                 <div
                     style={{
                         width: "100%",
@@ -42,20 +53,6 @@ export default class TableCell extends Component {
                         overflow: "hidden"
                     }}
                 >
-                    <DetailsModal
-                        title={"part #" + this.props.item.RebrickableId}
-                        id={this.props.item.id}
-                        type="part"
-                        size="lg"
-                        customButton={
-                            <a>
-                                {" "}
-                                <i className="fa fa-info" />
-                            </a>
-                        }
-                    >
-                        <PartDetailsModal />{" "}
-                    </DetailsModal>
                     {this.props.quantity}x #{this.props.item.RebrickableId}
                 </div>
                 <div
