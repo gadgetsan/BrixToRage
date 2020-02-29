@@ -12,8 +12,6 @@ import PartDetailsModal from "Components/Model/Part/DetailsModal";
 export default class TableCell extends Component {
     constructor(props) {
         super(props);
-        this.Color = this.props.item[this.props.link].Color;
-        this.linked = this.props.item[this.props.link];
     }
     render() {
         return (
@@ -24,8 +22,8 @@ export default class TableCell extends Component {
                     border: "solid 1px black",
                     margin: "0px",
                     padding: "0px",
-                    backgroundColor: "#" + this.Color.Hex,
-                    color: getContrastYIQ(this.Color.Hex)
+                    backgroundColor: "#" + this.props.item.Color.Hex,
+                    color: getContrastYIQ(this.props.item.Color.Hex)
                 }}
             >
                 <DetailsModal
@@ -56,8 +54,7 @@ export default class TableCell extends Component {
                         overflow: "hidden"
                     }}
                 >
-                    {this.linked.Quantity}x #
-                    {this.props.item.Part.RebrickableId}
+                    {this.props.quantity}x #{this.props.item.Part.RebrickableId}
                 </div>
                 <div
                     style={{

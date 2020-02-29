@@ -59,7 +59,7 @@ export default class PartDetailsModal extends Component {
                             <PartColorTableCell
                                 key={partColor.id}
                                 item={partColor}
-                                link="sets_parts"
+                                quantity={partColor.sets_parts[0].Quantity}
                             />
                         );
                     })}

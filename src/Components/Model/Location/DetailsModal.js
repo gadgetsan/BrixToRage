@@ -18,9 +18,16 @@ export default class LocationDetailsModal extends Component {
                             <PartTableCell
                                 key={part.id}
                                 item={part}
-                                quantity={
-                                    part.PartColor.parts_locations.Quantity
-                                }
+                                quantity={part.PartColor.reduce(
+                                    (acc, partColor) =>
+                                        acc +
+                                        partColor.parts_locations.reduce(
+                                            (acc, location) =>
+                                                acc + location.Quantity,
+                                            0
+                                        ),
+                                    0
+                                )}
                             />
                         );
                     })}

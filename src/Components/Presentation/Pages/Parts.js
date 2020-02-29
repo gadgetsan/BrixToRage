@@ -88,6 +88,7 @@ export class Parts extends Component {
                                         <th>Name</th>
                                         <th>Part #</th>
                                         <th>Location(s)</th>
+                                        <th>Quantity</th>
                                         <th>Actions</th>
                                     </TableList>
                                 ) : null}

@@ -30,6 +30,17 @@ export default class PartTableRow extends Component {
                         );
                     })}
                 </td>
+                <td>
+                    {this.props.item.parts_colors.reduce((total, partColor) => {
+                        return partColor.PartLocations
+                            ? partColor.PartLocations.reduce(
+                                  (total, partLocation) =>
+                                      partLocation.Quantity + total,
+                                  0
+                              ) + total
+                            : total;
+                    }, 0)}
+                </td>
                 <td className="actionCell">
                     <DetailsModal
                         title={"part #" + this.props.item.RebrickableId}

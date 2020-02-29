@@ -10,10 +10,6 @@ import DetailsModal from "Components/Presentation/Shared/DetailsModal";
 import PartDetailsModal from "Components/Model/Part/DetailsModal";
 
 export default class TableCell extends Component {
-    constructor(props) {
-        super(props);
-        this.linked = this.props.item[this.props.link];
-    }
     render() {
         return (
             <MDBCol

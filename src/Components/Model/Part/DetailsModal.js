@@ -72,12 +72,18 @@ export default class PartDetailsModal extends Component {
                                                                 }
                                                             </strong>{" "}
                                                             in{" "}
-                                                            <LocationInlineDisplay
-                                                                location={
-                                                                    partLocation.Location
-                                                                }
-                                                                hideName={true}
-                                                            />
+                                                            {partLocation.Location ? (
+                                                                <LocationInlineDisplay
+                                                                    location={
+                                                                        partLocation.Location
+                                                                    }
+                                                                    hideName={
+                                                                        true
+                                                                    }
+                                                                />
+                                                            ) : (
+                                                                "???"
+                                                            )}
                                                         </span>
                                                     );
                                                 },
